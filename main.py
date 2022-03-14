@@ -1,18 +1,25 @@
 import requests
+import time
 
-# 送りたい文字
+# ここにtokenいれる
+token = 'tokenここにいれるよ'
+
+# 送りたい文字を入れる
 payload = {
   'content': "送りたい文字"
 }
 
-# token入れる
 header = {
-  'authorization': 'token'
+  'authorization': token
 }
+# チャンネルidを入れる
+ch = 001010225511554294
 
-# チャンネルid
-ch = 9034944649151848
-
-# 送りたい回数
-for i in range (100):
-  r = requests.post('https://discord.com/api/v9/channels/' + str(ch) + '/messages', data=payload, headers=header)
+# ここから下は意味わからんことなったからいじらない方がいい
+i = 0
+while(i < 3):
+    r = requests.post('https://discord.com/api/v9/channels/' + str(ch) + '/messages', data=payload, headers=header)
+res.raise_for_status()
+time.sleep(1)
+i += 1
+    
