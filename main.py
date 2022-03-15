@@ -1,6 +1,10 @@
 import requests
 import time
 
+print("何か入力してください")
+input()
+
+
 # ここにtokenいれる
 token = 'tokenここにいれるよ'
 
@@ -12,14 +16,21 @@ payload = {
 header = {
   'authorization': token
 }
-# チャンネルidを入れる
-ch = 001010225511554294
 
-# ここから下は意味わからんことなったからいじらない方がいい
+# チャンネルidを入れる
+ch = 123456789101112131
+ch2 = 123456789101112131
+
+# 送りたい回数を入れる(この場合は10)
+e = 10
+
+# ここから下はいじらないで
+xsize = 0
 i = 0
-while(i < 3):
+while(i < e):
     r = requests.post('https://discord.com/api/v9/channels/' + str(ch) + '/messages', data=payload, headers=header)
-res.raise_for_status()
-time.sleep(1)
-i += 1
-    
+    r = requests.post('https://discord.com/api/v9/channels/' + str(ch2) + '/messages', data=payload, headers=header)
+    xsize += 1
+    print("Sent Messages x" + str(xsize))
+    time.sleep(1)
+    i += 1
