@@ -6,11 +6,17 @@ import time
 print("何か入力してください")
 input()
 
+print("送りたい回数を入れてください")
+# intじゃないと動かない
+e = int(input())
+
+print("何秒ごとに送りますか(0はバグります)")
+stime = int(input())
 
 # ここにtokenいれる
-token = 'token'
+token = 'token1つ目入れる'
 
-token2 = 'token2'
+token2 = 'token2つ目入れる'
 
 # 送りたい文字を入れる
 payload = {
@@ -24,12 +30,10 @@ header = {
 header2 = {
   'authorization': token2
 }
-# チャンネルidを入れる
-ch = 123456789101112131
-ch2 = 123456789101112131
 
-# 送りたい回数を入れる(この場合は10)
-e = 10
+# チャンネルidを入れる
+ch =0123456789
+ch2 =  03225694455566550
 
 # ここから下はいじらないで
 xsize = 0
@@ -42,5 +46,5 @@ while(i < e):
     xsize += 1
     print("Sent Messages x" + str(xsize))
     # 速度早くしたいならこの下のtime.sleep(1)を消す(消したらapiのエラーが出るから消さない方がいい)
-    time.sleep(1)
+    time.sleep(stime)
     i += 1
