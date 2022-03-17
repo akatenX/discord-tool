@@ -13,3 +13,5 @@ ch3 = チャンネルid
 
     r = requests.post('https://discord.com/api/v9/channels/' + str(ch3) + '/messages', data=payload, headers=header)
 これをそれっぽい所に入れたらいけるよ！！
+
+dmに送ることもできるみたいだけど多分フレンドになってないと出来ません
